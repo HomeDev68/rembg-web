@@ -6,26 +6,56 @@
       body {
         height: 100vh;
         display: flex;
-
         align-items: center;
         justify-content: center;
         text-align: center;
+        font-family: 'Arial', sans-serif; /* Added font for better readability */
+        background-color: #f4f4f4; /* Added a light background color */
+        margin: 0; /* Removed default body margins */
       }
 
       .drop-zone {
         border: 2px dashed #ccc;
-        padding: 20px;
-        width: 80vw;
-        height: 80vh;
+        padding: 30px; /* Increased padding for better spacing */
+        width: 50%; /* Reduced width for better responsiveness */
+        max-width: 500px; /* Added max-width for better responsiveness */
+        min-height: 200px; /* Added min-height to prevent collapsing */
+        background-color: #fff; /* Added white background to the drop zone */
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Added a subtle box shadow */
+        border-radius: 8px; /* Added rounded corners */
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        transition: background-color 0.3s ease; /* Added transition for smoother effect */
       }
 
       .drop-zone.dragover {
-        background-color: #f0f0f0;
+        background-color: #e0e0e0; /* Changed dragover background color */
+      }
+
+      h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        color: #333; /* Darker text color for better contrast */
+      }
+
+      input[type="file"],
+      input[type="submit"] {
+        padding: 10px 20px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 4px;
+        background-color: #4CAF50; /* Green button color */
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease; /* Added transition for smoother effect */
+      }
+
+      input[type="submit"]:hover,
+      input[type="file"]:hover {
+        background-color: #45a049; /* Darker green on hover */
       }
     </style>
   </head>
@@ -48,7 +78,7 @@
       let fileInput = document.getElementById("fileInput");
       let uploadForm = document.getElementById("uploadForm");
 
-      dropZone.addEventListener("click", function () {
+      dropZone.addEventListener("click", function (e) {
         if (e.target === dropZone) {
           fileInput.click();
         }
