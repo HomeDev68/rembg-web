@@ -74,9 +74,13 @@
         e.stopPropagation();
         this.classList.remove("dragover");
 
-        let file = e.dataTransfer.files[0];
-        fileInput.files = e.dataTransfer.files;
-        uploadForm.submit();
+        if (e.dataTransfer.files.length > 0) {
+          let file = e.dataTransfer.files[0];
+          fileInput.files = e.dataTransfer.files;
+          uploadForm.submit();
+        } else {
+          alert("No files dropped.");
+        }
       });
     </script>
   </body>
