@@ -1,3 +1,6 @@
+# Model weights
 u2net.onnx
+
+# Nodejs, npm
 node_modules
 dist
