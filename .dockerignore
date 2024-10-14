@@ -1,0 +1,9 @@
+Dockerfile
+*.md
+basic.py
+node_modules
+dist
+.git/
+.gitignore
+*.jpg
+*.png
