@@ -6,5 +6,5 @@ Watch the [tutorial](https://youtu.be/cw34KMPSt4k) on YouTube
 
 ```
 pip install -r requirements.txt
-python app.py
+python3 app.py
 ```
